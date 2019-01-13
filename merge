@@ -1,0 +1,19 @@
+const obj1 = {
+  name : 'Alex',
+  subName : 'Sokolov'
+};
+
+const obj2 = {
+  age : 29,
+  name : 'Alex'
+};
+
+const merge = (o1, o2) => {
+  for(let key in o2){
+    o1[key] = o2[key]
+  }
+};
+
+merge(obj1, obj2);
+
+console.log(obj1); //{ name: 'Alex', subName: 'Sokolov', age: 29 }
