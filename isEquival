@@ -3,7 +3,7 @@ const isEquival = (obj1, obj2) => {
   const keysObj1 = Object.getOwnPropertyNames(obj1);
   const keysObj2 = Object.getOwnPropertyNames(obj2);
 
-  if (keysObj1.length != keysObj2.length) {
+  if (keysObj1.length !== keysObj2.length) {
     return false;
   };
 
