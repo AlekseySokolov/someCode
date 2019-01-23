@@ -10,7 +10,7 @@ const isEquival = (obj1, obj2) => {
   return keysObj1.every(i => obj1[i] === obj2[i]) !== true ? false : true
 };
 
-forTest1 --------
+toTest1 --------
 
 const obj1 = {
   name : 'Alex',
@@ -23,7 +23,7 @@ const obj2 = {
   name : 'Alex'
 };
 
-forTest2 --------
+toTest2 --------
 
 const obj3 = {
   name : 'Alexey',
