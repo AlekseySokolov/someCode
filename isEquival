@@ -16,24 +16,24 @@ const obj1 = {
   name : 'Alex',
   subName : 'Sokolov',
   age : 29
-}
+};
 const obj2 = {
   subName : 'Sokolov',
   age : 29,
   name : 'Alex'
-}
+};
 forTest2 --------
 
 const obj3 = {
   name : 'Alexey',
   subName : 'Sokolov',
   age : 29
-}
+};
 const obj4 = {
   subName : 'Sokolov',
   age : 29,
   name : 'Alex'
-}
+};
 
 isEquival(obj1, obj2); //true
 isEquival(obj3, obj4); //false
