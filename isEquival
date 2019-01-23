@@ -22,6 +22,7 @@ const obj2 = {
   age : 29,
   name : 'Alex'
 };
+
 forTest2 --------
 
 const obj3 = {
