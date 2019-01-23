@@ -1,0 +1,39 @@
+const isEquival = (obj1, obj2) => {
+
+  const keysObj1 = Object.getOwnPropertyNames(obj1);
+  const keysObj2 = Object.getOwnPropertyNames(obj2);
+
+  if (keysObj1.length != keysObj2.length) {
+    return false;
+  };
+
+  return keysObj1.every(i => obj1[i] === obj2[i]) !== true ? false : true
+};
+
+forTest1 --------
+
+const obj1 = {
+  name : 'Alex',
+  subName : 'Sokolov',
+  age : 29
+}
+const obj2 = {
+  subName : 'Sokolov',
+  age : 29,
+  name : 'Alex'
+}
+forTest2 --------
+
+const obj3 = {
+  name : 'Alexey',
+  subName : 'Sokolov',
+  age : 29
+}
+const obj4 = {
+  subName : 'Sokolov',
+  age : 29,
+  name : 'Alex'
+}
+
+isEquival(obj1, obj2); //true
+isEquival(obj3, obj4); //false
