@@ -1,0 +1,8 @@
+const getAggregateCollection = (firstCollection, secondCollection) => {
+ const map = new Map();
+ [...firstCollection, ...secondCollection].forEach(item => {
+   map.has(item.id) ? Object.assign(map.get(item.id), item) : map.set(item.id, item)
+ })
+ const merge = [...map.values()];
+ return merge;
+};
