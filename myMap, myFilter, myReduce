@@ -1,0 +1,36 @@
+const myMap = (arr, callback) => {
+  const result = [];
+  const fn = (elem) => {
+    result.push(callback(elem))
+  };
+   arr.forEach(fn);
+    return result;
+  };
+  
+myMap([1, 2, 3], (a) => a * 2) ---> [ 2, 4, 6 ]
+
+
+
+const myFilter = (arr, callback) => {
+  const result = [];
+  const fn = (elem) => {
+    (callback(elem) === true) ? result.push(elem) : result;
+  };
+  arr.forEach(fn);
+  return result;
+};
+
+myFilter([1, 2, 3], (a) => a > 2); ---> [3]
+
+
+
+const myReduce = (arr, callBack, inValue) => {
+  let result = inValue;
+  arr.forEach(i => {
+    result = callBack(result, i)
+  })
+  return result;
+};
+
+const testFn = (a, b) => a + b;
+myReduce([1, 2, 3], testFn, 0); ---> 6
