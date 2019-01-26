@@ -1,0 +1,22 @@
+const getAggregateCollection = (firstCollection, secondCollection) => {
+  
+  const cloneFirstCollection = firstCollection.slice();
+  const cloneSecondCollection = secondCollection.slice();
+
+  cloneFirstCollection.forEach(i => {
+    cloneSecondCollection.forEach(e => {
+      i.id === e.id ? Object.assign(i, e) : i
+    });
+  });
+
+  const notIncludedIdFirst = cloneFirstCollection.filter(e => cloneSecondCollection.findIndex(i => i.id === e.id) === -1);
+  const notIncludedIdSecond = cloneSecondCollection.filter(e => cloneFirstCollection.findIndex(i => i.id === e.id) === -1);
+  const notIncludedId = notIncludedIdFirst.concat(notIncludedIdSecond);
+
+  notIncludedId.forEach(i => cloneFirstCollection.push(i));
+
+  return [...new Set(cloneFirstCollection.map(i => JSON.stringify(i)))].map(JSON.parse);
+  
+};
+
+getAggregateCollection(firstCollection, secondCollection);
