@@ -1,0 +1,12 @@
+const chunk = (arr, divider) => {
+  const arrCopy = arr.slice();
+  const result = [];
+
+  const fn = (arrCopy) => {
+    if(arrCopy.length !== 0) {
+    result.push(arrCopy.slice(0, divider))
+    };
+    return arrCopy.length === 0 ? result : fn(arrCopy.splice(divider));
+  };
+  return fn(arrCopy);
+};
