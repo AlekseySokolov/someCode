@@ -1,0 +1,3 @@
+const difference = (arr1, arr2) => {
+  return arr1.reduce((acc, value) => !arr2.includes(value) ? acc.concat(value) : acc, []);
+};
