@@ -1,0 +1,6 @@
+const currentTime = () => {
+  const date = new Date().toString();
+  return 'Current time is ' + date.split(' ')[4].split('').splice(0, 5).join('');
+};
+
+currentTime();
