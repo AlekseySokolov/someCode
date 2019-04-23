@@ -1,0 +1,134 @@
+// You should implement function what return array of powers for the number (10min)
+const getPowersOfNumber = (number, until) => {
+  return 'not implemented';
+};
+
+// test
+const answer = [1, 3, 9, 27];
+
+console.log(
+  `${JSON.stringify(answer)}` === `${JSON.stringify(getPowersOfNumber(3,3))}`
+);
+
+// You should implement function what return aggregate of collections (15min + refactoring 5min)
+const getAggregateCollection = (firstCollection, secondCollection) => {
+  return 'not implemented';
+};
+
+// test
+const firstCollection = [
+  {
+    id: 'h1',
+    value1: '123',
+  },
+  {
+    id: 'h2',
+    value1: '234',
+  },
+  {
+    id: 'h3',
+    value1: '456',
+    value2: '43',
+    value3: '12',
+  }
+];
+const secondCollection = [
+  {
+    id: 'h1',
+    value1: '678',
+  },
+  {
+    id: 'h2',
+    value1: '234',
+    value2: '123',
+  },
+  {
+    id: 'h3',
+    value1: '56',
+  },
+  {
+    id: 'h4',
+    value4: '890',
+  },
+];
+const answer = [
+  {
+    id: 'h1',
+    value1: '678',
+  },
+  {
+    id: 'h2',
+    value1: '234',
+    value2: '123',
+  },
+  {
+    id: 'h3',
+    value1: '56',
+    value2: '43',
+    value3: '12',
+  },
+  {
+    id: 'h4',
+    value4: '890',
+  },
+];
+
+console.log(
+  `${JSON.stringify(answer)}` === `${JSON.stringify(getAggregateCollection(firstCollection, secondCollection))}`
+);
+
+// You should implement function what return diff of collections (20min + refactoring 5min)
+const getDiffOfCollections = (firstCollection, secondCollection) => {
+  return 'not implemented';
+};
+
+// test
+const firstCollection = [
+  {
+    id: 'h1',
+    value1: '123',
+  },
+  {
+    id: 'h2',
+    value1: '234',
+  },
+  {
+    id: 'h3',
+    value1: '456',
+    value2: '43',
+    value3: '12',
+  }
+];
+const secondCollection = [
+  {
+    id: 'h1',
+    value1: '678',
+  },
+  {
+    id: 'h2',
+    value1: '234',
+    value2: '123',
+  },
+  {
+    id: 'h3',
+    value1: '56',
+    value3: '567',
+  },
+  {
+    id: 'h4',
+    value4: '890',
+  },
+];
+const answer = {
+  h1: {
+    value1: ['123', '678'],
+  },
+  h3: {
+    value1: ['456', '56'],
+    value3: ['12', '567'],
+  },
+};
+
+console.log(
+  `${JSON.stringify(answer)}` === `${JSON.stringify(getDiffOfCollections(firstCollection, secondCollection))}`
+);
