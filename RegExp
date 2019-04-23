@@ -1,0 +1,5 @@
+const firstLetterToUpperCase = (str) => {
+  return str.split(' ').map(word => 
+  word === '' ? word : 
+  word.replace(/^\w/g, word[0].toUpperCase())).join(' ');
+};
