@@ -1,0 +1,73 @@
+// test
+const firstCollection = [
+  {
+    id: 'h1',
+    value1: '123',
+  },
+  {
+    id: 'h2',
+    value1: '234',
+  },
+  {
+    id: 'h3',
+    value1: '456',
+    value2: '43',
+    value3: '12',
+  }
+];
+const secondCollection = [
+  {
+    id: 'h1',
+    value1: '678',
+  },
+  {
+    id: 'h2',
+    value1: '234',
+    value2: '123',
+  },
+  {
+    id: 'h3',
+    value1: '56',
+    value3: '567',
+  },
+  {
+    id: 'h4',
+    value4: '890',
+  }
+];
+
+
+const _ = require('lodash');
+const getDiffOfCollections = (firstCollection, secondCollection) => {
+
+  const result = {},
+        map1 = new Map(),
+        map2 = new Map();
+
+  _.cloneDeep(testCollection).forEach(obj => map1.set(obj.id, obj));
+  _.cloneDeep(testCollection2).forEach(obj => map2.set(obj.id, obj));
+  map1.forEach(object => delete object.id);
+  map2.forEach(object => delete object.id);
+
+  map1.forEach((obj, key) => {
+   if(map2.has(key)) {
+    for (let value in obj) {
+     map2.get(key)[value] === obj[value] ? map1.delete(key) :
+     map2.get(key)[value] !== undefined ? obj[value] = [obj[value], map2.get(key)[value]] :
+     delete obj[value];
+    }
+   }
+  });
+
+  map1.forEach((value, key) => result[key] = value);
+  return result;
+};
+
+getDiffOfCollections(firstCollection, secondCollection);
+// { 
+h1: { value1: [ '123', '678' ]}, 
+h3: { value1: [ '456', '56' ], 
+      value3: [ '12', '567' ]} 
+} //
+
+
