@@ -1,4 +1,4 @@
-// test
+  // test
 const firstCollection = [
   {
     id: 'h1',
@@ -37,15 +37,14 @@ const secondCollection = [
 ];
 
 
-const _ = require('lodash');
 const getDiffOfCollections = (firstCollection, secondCollection) => {
 
   const result = {},
         map1 = new Map(),
         map2 = new Map();
 
-  _.cloneDeep(testCollection).forEach(obj => map1.set(obj.id, obj));
-  _.cloneDeep(testCollection2).forEach(obj => map2.set(obj.id, obj));
+  _.cloneDeep(firstCollection).forEach(obj => map1.set(obj.id, obj));
+  _.cloneDeep(secondCollection).forEach(obj => map2.set(obj.id, obj));
   map1.forEach(object => delete object.id);
   map2.forEach(object => delete object.id);
 
@@ -63,7 +62,7 @@ const getDiffOfCollections = (firstCollection, secondCollection) => {
   return result;
 };
 
-getDiffOfCollections(firstCollection, secondCollection);
+getDiffOfCollections(firstCollection,secondCollection)
 // { 
 h1: { value1: [ '123', '678' ]}, 
 h3: { value1: [ '456', '56' ], 
