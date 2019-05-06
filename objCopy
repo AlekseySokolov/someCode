@@ -1,11 +1,10 @@
 const objCopy = (obj) => {
 
   const result = {},
-        keys = Object.keys(obj),
-        values = Object.values(obj),
+        keysAndValues = Object.entries(obj),
         map = new Map();
 
-  keys.forEach((key, index) => map.set(key,values[index]));
+  keysAndValues.forEach(arr => map.set(arr[0], arr[1]));
   map.forEach((value, key) => result[key] = value);
   
   return result;
