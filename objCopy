@@ -1,0 +1,12 @@
+const objCopy = (obj) => {
+
+  const result = {},
+        keys = Object.keys(obj),
+        values = Object.values(obj),
+        map = new Map();
+
+  keys.forEach((key, index) => map.set(key,values[index]));
+  map.forEach((value, key) => result[key] = value);
+  
+  return result;
+};
