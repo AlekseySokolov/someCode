@@ -1,0 +1,33 @@
+const numberWithCommas = (x,toFixed) => {
+    const x_ = _.isUndefined(toFixed) ? x : x.toFixed(toFixed)
+    var parts = x_.toString().split('.')
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+    return parts.join(',')
+}
+
+const n = (s) => {
+    s = _.replace(_.toString(s), / /g, '')
+    if (s === null || s === '' || _.isUndefined(s)) { return '' }
+
+    if (_.isNumber(s.replace(/,/,'.') * 1)) {
+        return numberWithCommas(s.replace(/,/,'.') * 1) //.replace(/,/,'.')
+    } else {
+        return s
+    }
+}
+
+const digitCapacity = (str) => {
+    return str.replace(/\d{1,3}(?=(\d{3})+(?!\d))/g, '$&,')
+}
+
+const ArrayDigitCapacity = (arr) => {
+    return arr.map(str => digitCapacity(str))
+}
+
+const digitCapacityInStringWithTheWords = (str) => {
+    const mutateArr =  str.split(' ');
+    const toArrCopy = str.split(' ');
+    mutateArr.forEach((str, index) => Number(str) !== NaN ? mutateArr.splice(index, 1, n(mutateArr[index])) : str)
+    toArrCopy.forEach((str, index) => mutateArr[index] !== 'NaN' ? toArrCopy.splice(index, 1, n(mutateArr[index])) : str)
+    return toArrCopy.join(' ')
+}
